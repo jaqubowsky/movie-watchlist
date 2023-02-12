@@ -1,3 +1,10 @@
+:root {
+  --main-white: rgba(255, 255, 255, 1);
+  --main-gray: rgb(248, 246, 246);
+  --main-hover: rgb(233, 232, 232);
+  --main-border: rgba(211, 211, 211, 1);
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -27,6 +34,8 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 /*
   6. Improve media defaults
@@ -68,16 +77,102 @@ h6 {
   isolation: isolate;
 }
 
-/* FORM */
-
-.form__search {
-  position: relative;
-  padding: 12px 40px;
-  margin: 8px 0;
+/* MAIN LAYOUT */
+.wrapper {
+  margin: 0 auto;
+  width: 700px;
+  height: auto;
 }
 
-.fa-magnifying-glass {
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  position: relative;
+  background: no-repeat url("/public/images/background.jpg");
+  background-size: cover;
+}
+
+/* HEADER NAV */
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 2rem;
+}
+
+.header__title {
+  font-size: 4rem;
+  color: var(--main-white);
+}
+
+.header__watchlist-btn {
+  background: transparent;
+  color: var(--main-white);
+  border: none;
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+/* BTN */
+
+.btn {
+  cursor: pointer;
+}
+
+/* HEADER FORM */
+
+.header__form {
   position: absolute;
-            left: 15px;
-            top: 55px;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form__search-div {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.form__submit-btn,
+.form__search {
+  border: 1px var(--main-border) solid;
+}
+
+.form__search {
+  width: 100%;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form__search:focus {
+  outline: none;
+}
+
+.form__submit-btn {
+  width: 30%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: var(--main-gray);
+}
+
+.form__submit-btn:hover {
+  background-color: var(--main-hover);
+}
+
+.form__search-div .icon {
+  position: absolute;
+  top: 16px;
+  left: 10px;
 }
