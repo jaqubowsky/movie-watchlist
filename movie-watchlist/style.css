@@ -38,17 +38,7 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-/*
-  6. Improve media defaults
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+
 /*
   7. Remove built-in form typography styles
 */
@@ -81,7 +71,7 @@ h6 {
 /* MAIN LAYOUT */
 .wrapper {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
   height: auto;
 }
 
@@ -202,20 +192,21 @@ h6 {
 
 .section__film-grid {
   display: grid;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 4rem;
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 /* FILM ELEMENT */
 
 .film-grid__film-element {
   display: flex;
+  height: 200px;
 }
 
 .img-container__poster {
-  height: 100%;
-  width: 300px;
+  width: 150px;
+  height: 200px;
 }
 
 .film-element__info {
@@ -229,6 +220,7 @@ h6 {
 
 .film-element__description {
   color: var(--main-font-gray);
+  width: 450px;
 }
 
 .film-element__header,
