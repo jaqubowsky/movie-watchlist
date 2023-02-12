@@ -8,32 +8,34 @@
     <title>Movie watchlist</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__background">
-        <h1 class="header__title"></h1>
+    <div class="wrapper">
+      <header class="header">
         <nav class="header__nav">
-          <button class="header__watchlist-btn">My Watchlist</button>
+          <h1 class="header__title">Find your film</h1>
+          <button class="header__watchlist-btn btn">My Watchlist</button>
         </nav>
-      </div>
-      <form class="header__form">
-        <input
-          type="search"
-          name="filmSearchInput"
-          id="filmSearchInput"
-          class="form__search"
-          placeholder="Search for a movie"
-        />
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <button type="submit" class="form__submit-btn" id="submitBtn">
-          Search
-        </button>
-      </form>
-    </header>
-    <main class="main">
-      <section class="main__section">
-        <div class="section__film-grid"></div>
-      </section>
-    </main>
+        <form class="header__form">
+          <div class="form__search-div">
+            <i class="fa-solid fa-magnifying-glass icon"></i>
+            <input
+              type="search"
+              name="filmSearchInput"
+              id="filmSearchInput"
+              class="form__search"
+              placeholder="Search for a movie"
+            />
+            <button type="submit" class="form__submit-btn btn" id="submitBtn">
+              Search
+            </button>
+          </div>
+        </form>
+      </header>
+      <main class="main">
+        <section class="main__section">
+          <div class="section__film-grid"></div>
+        </section>
+      </main>
+    </div>
     <script src="main.js" type="module"></script>
     <script
       src="https://kit.fontawesome.com/2caf16760b.js"
