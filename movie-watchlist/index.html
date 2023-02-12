@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie watchlist</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__background">
+        <h1 class="header__title"></h1>
+        <nav class="header__nav">
+          <button class="header__watchlist-btn">My Watchlist</button>
+        </nav>
+      </div>
+      <form class="header__form">
+        <input
+          type="search"
+          name="filmSearchInput"
+          id="filmSearchInput"
+          class="form__search"
+          placeholder="Search for a movie"
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <button type="submit" class="form__submit-btn" id="submitBtn">
+          Search
+        </button>
+      </form>
+    </header>
+    <main class="main">
+      <section class="main__section">
+        <div class="section__film-grid"></div>
+      </section>
+    </main>
+    <script src="main.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/2caf16760b.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
