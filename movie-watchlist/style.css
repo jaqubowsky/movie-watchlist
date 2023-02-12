@@ -87,21 +87,39 @@ h6 {
 /* HEADER */
 
 .header {
-  display: flex;
-  align-items: center;
-  height: 300px;
   position: relative;
+}
+
+.header__background {
   background: no-repeat url("/public/images/background.jpg");
   background-size: cover;
+  height: 260px;
+  width: auto;
+  filter: brightness(30%);
+}
+
+.header__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* HEADER NAV */
 
 .header__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   display: flex;
+  padding: 2rem;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 2rem;
 }
 
 .header__title {
