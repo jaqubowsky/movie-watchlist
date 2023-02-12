@@ -33,7 +33,7 @@ function createFilmElement(
   const rating = document.createElement("span");
   rating.classList.add("film-element__rating");
   rating.id = "filmRating";
-  rating.innerText = `⭐ ${filmRating}}`;
+  rating.innerText = `⭐ ${filmRating}`;
 
   header.appendChild(title);
   header.appendChild(rating);
@@ -45,7 +45,7 @@ function createFilmElement(
   const duration = document.createElement("span");
   duration.classList.add("film-element__duration");
   duration.id = "filmDuration";
-  duration.innerText = `${filmDuration} min`;
+  duration.innerText = `${filmDuration}`;
 
   const type = document.createElement("p");
   type.classList.add("film-element__type");
@@ -70,10 +70,13 @@ function createFilmElement(
   descriptionText.id = "filmDescription";
   descriptionText.textContent = filmDescription;
 
+  description.appendChild(descriptionText);
   info.appendChild(description);
 
   filmElement.appendChild(picture);
   filmElement.appendChild(info);
+
+  return filmElement;
 }
 
 export default createFilmElement;
