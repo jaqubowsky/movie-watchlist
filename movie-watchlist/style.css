@@ -116,6 +116,7 @@ h6 {
 .header__title {
   font-size: 4rem;
   color: var(--main-white);
+  cursor: pointer;
 }
 
 .header__watchlist-btn {
