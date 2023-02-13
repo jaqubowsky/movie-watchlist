@@ -20,9 +20,6 @@
 * {
   margin: 0;
 }
-/*
-  3. Allow percentage-based heights in the application
-*/
 html,
 body {
   height: 100%;
@@ -229,5 +226,5 @@ h6 {
 }
 
 .film-element__utils {
-  gap: 3rem;
+  gap: 3.1rem;
 }
