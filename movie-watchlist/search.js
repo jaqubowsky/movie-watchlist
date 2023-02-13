@@ -100,11 +100,16 @@ async function renderFilmData(callbackArray) {
   });
 }
 
+function reloadHomePage() {
+  filmGrid.innerHTML = ""
+}
+
 export {
   resetSearchInput,
   renderFilmArray,
   getFilmsArray,
   getFilmDetails,
   renderFilm,
+  reloadHomePage,
   renderFilmData,
 };
