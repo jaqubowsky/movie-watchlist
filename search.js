@@ -5,7 +5,7 @@ const filmGrid = document.getElementById("filmGrid");
 async function getFilmsData(title) {
   try {
     const request = await fetch(
-      `http://www.omdbapi.com/?apikey=6bc8a76a&&s=${title}`
+      `https://www.omdbapi.com/?apikey=6bc8a76a&&s=${title}`
     );
 
     const data = await request.json();
@@ -34,7 +34,7 @@ function searchForUnique(data) {
 async function getFilmDetails(title) {
   try {
     const request = await fetch(
-      `http://www.omdbapi.com/?apikey=6bc8a76a&&plot=short&t=${title}&page=1`
+      `https://www.omdbapi.com/?apikey=6bc8a76a&&plot=short&t=${title}&page=1`
     );
 
     const data = await request.json();
