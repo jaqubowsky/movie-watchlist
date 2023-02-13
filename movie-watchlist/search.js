@@ -1,9 +1,8 @@
 import createFilmElement from "./filmElement";
 
-const searchInput = document.getElementById("filmSearchInput");
 const filmGrid = document.getElementById("filmGrid");
 
-async function getFilmsArray(title) {
+async function getFilmsData(title) {
   try {
     const request = await fetch(
       `http://www.omdbapi.com/?apikey=6bc8a76a&&s=${title}`
@@ -13,13 +12,15 @@ async function getFilmsArray(title) {
 
     return searchForUnique(data.Search);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    alert(
+      "Wystąpił błąd podczas pobierania danych o filmach. Spróbuj ponownie później."
+    );
   }
 }
 
 function searchForUnique(data) {
   const uniqueData = data.reduce((finalArray, current) => {
-    console.log(finalArray, current);
     let obj = finalArray.find((film) => film.Title === current.Title);
 
     if (obj) return finalArray;
@@ -40,7 +41,8 @@ async function getFilmDetails(title) {
 
     return data;
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    alert("Wystąpił błąd podczas pobierania danych o filmach.");
   }
 }
 
@@ -50,30 +52,37 @@ function resetSearchInput() {
   searchForm.reset();
 }
 
-async function renderFilms() {
-  try {
-    filmGrid.innerHTML = "";
+async function getFilmsArray(data) {
+  if (!data) filmGrid.innerHTML = "";
 
-    const filmsArray = await getFilmsArray(searchInput.value);
+  const filmsArray = await getFilmsData(data);
 
-    for (let film of filmsArray) {
-      const filmDetails = await getFilmDetails(film.Title);
+  return filmsArray;
+}
 
-      if (filmDetails.Response === "False") continue;
-      if (filmDetails.Poster === "N/A") continue;
+async function renderFilmArray(data) {
+  filmGrid.innerHTML = "";
+  let filmDetails;
 
-      renderFilm(
-        filmDetails.Poster,
-        filmDetails.Title,
-        filmDetails.imdbRating,
-        filmDetails.Runtime,
-        filmDetails.Genre,
-        filmDetails.Plot,
-        filmGrid
-      );
+  for (let film of data) {
+    if (Object.keys(film).length === 5) {
+      filmDetails = await getFilmDetails(film.Title);
+    } else {
+      filmDetails = film;
     }
-  } catch (err) {
-    console.log(err);
+
+    if (filmDetails.Response === "False") continue;
+    if (filmDetails.Poster === "N/A") continue;
+
+    renderFilm(
+      filmDetails.Poster,
+      filmDetails.Title,
+      filmDetails.imdbRating,
+      filmDetails.Runtime,
+      filmDetails.Genre,
+      filmDetails.Plot,
+      filmGrid
+    );
   }
 }
 
@@ -83,4 +92,19 @@ function renderFilm(img, title, rating, time, genre, plot, container) {
   container.appendChild(newFilm);
 }
 
-export { resetSearchInput, renderFilms };
+async function renderFilmData(callbackArray) {
+  const filmArray = callbackArray;
+
+  filmArray.then((array) => {
+    renderFilmArray(array);
+  });
+}
+
+export {
+  resetSearchInput,
+  renderFilmArray,
+  getFilmsArray,
+  getFilmDetails,
+  renderFilm,
+  renderFilmData,
+};
