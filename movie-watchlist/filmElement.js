@@ -53,9 +53,16 @@ function createFilmElement(
   type.innerText = filmType;
 
   const btn = document.createElement("button");
-  btn.classList.add("film-element__watchlist-add-btn", "btn");
-  btn.id = "filmAddBtn";
-  btn.innerHTML = `<i class="fas fa-plus-circle"></i> Watchlist`;
+
+  if (localStorage.getItem(filmTitle) === null) {
+    btn.innerHTML = `<i class="fas fa-plus-circle btn-icon-add" id="filmAddBtn"></i> Watchlist`;
+    btn.classList.add("film-element__watchlist-add-btn", "btn");
+    btn.id = "filmAddBtn";
+  } else {
+    btn.innerHTML = `<i class="fas fa-minus-circle btn-icon-remove" id="filmRemoveBtn"></i> Remove`;
+    btn.classList.add("film-element__watchlist-remove-btn", "btn");
+    btn.id = "filmRemoveBtn";
+  }
 
   utils.appendChild(duration);
   utils.appendChild(type);
