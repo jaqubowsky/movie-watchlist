@@ -1,4 +1,9 @@
-import { resetSearchInput, renderFilmData, getFilmsArray } from "./search";
+import {
+  resetSearchInput,
+  renderFilmData,
+  getFilmsArray,
+  reloadHomePage,
+} from "./search";
 
 import {
   getLocalStorageArray,
@@ -9,9 +14,10 @@ import {
 const searchForm = document.getElementById("searchForm");
 const filmGrid = document.getElementById("filmGrid");
 const watchlistBtn = document.getElementById("watchlistBtn");
+const headerTitle = document.getElementById("headerTitle");
 let SEARCH_INPUT_BEFORE;
 
-const events = (function () {
+const events = (function (e) {
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const searchInput = document.getElementById("filmSearchInput");
@@ -22,6 +28,8 @@ const events = (function () {
 
     resetSearchInput();
   });
+
+  headerTitle.addEventListener("click", () => reloadHomePage());
 
   filmGrid.addEventListener("click", (e) => {
     const target =
@@ -57,7 +65,6 @@ const events = (function () {
       renderFilmData(filmArray);
     }
   });
-
   watchlistBtn.addEventListener("click", () => {
     SEARCH_INPUT_BEFORE = "";
 
