@@ -82,7 +82,7 @@ h6 {
 }
 
 .header__background {
-  background: no-repeat url("/public/images/background.jpg");
+  background: no-repeat url("/images/background.jpg");
   background-size: cover;
   height: 260px;
   width: auto;
