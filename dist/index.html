@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Movie watchlist</title>
+    <script type="module" crossorigin src="/assets/index-deec3baf.js"></script>
+    <link rel="stylesheet" href="/assets/index-a297c6de.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__background"></div>
+        <div class="header__content">
+          <nav class="header__nav">
+            <h1 class="header__title" id="headerTitle">Find your film</h1>
+            <button class="header__watchlist-btn btn" id="watchlistBtn">
+              My Watchlist
+            </button>
+          </nav>
+          <form class="header__form" id="searchForm">
+            <div class="form__search-div">
+              <i class="fa-solid fa-magnifying-glass icon"></i>
+              <input
+                type="search"
+                name="filmSearchInput"
+                id="filmSearchInput"
+                class="form__search"
+                placeholder="Search for a movie"
+              />
+              <button type="submit" class="form__submit-btn btn" id="submitBtn">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </header>
+      <main class="main">
+        <section class="main__section">
+          <div class="section__film-grid" id="filmGrid"></div>
+        </section>
+      </main>
+    </div>
+    
+    <script
+      src="https://kit.fontawesome.com/2caf16760b.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
