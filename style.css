@@ -228,3 +228,16 @@ h6 {
 .film-element__utils {
   gap: 3.1rem;
 }
+
+@media (max-width: 600px) {
+  .film-grid__film-element {
+    font-size: 1.3rem;
+    height: 300px;
+    width: 100%;
+  }
+
+  .img-container__poster {
+    height: 100%;
+    width: 100%;
+  }
+}
