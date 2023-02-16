@@ -95,7 +95,7 @@
 
 Jakub Nalewajk - [@LinkedIn](https://www.linkedin.com/in/jakub-nalewajk/) - jakub.nalewajk04@gmail.com
 
-Project Link: (https://github.com/jaqubowsky/todo-list)
+Project Link: (https://github.com/jaqubowsky/movie-watchlist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
