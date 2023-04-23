@@ -6,7 +6,7 @@
     <img src="public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Todo List App</h3>
+<h3 align="center">Movie Watchlist App</h3>
 
   <p align="center">
     Simple movie watchlist project
